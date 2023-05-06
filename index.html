@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <input id="boxsize" type="number" placeholder="Box Size">
+    <input id="ballsize" type="number" placeholder="Ball Size">   
+    <input id="step" type="number" placeholder="Step length"> 
+    Ball color:<input id="ballcolor" type="color" >
+    Box color:<input id="boxcolor" type="color" >    
+    <button onclick="moveBall()">Click Me</button>
+    <br>
+    <button onclick="moveLeft()">Left</button>
+    <button onclick="moveRight()">Right</button>
+    <button onclick="moveUp()">Up</button>
+    <button onclick="moveDown()">Down</button>
+    <div id="box">
+        <div id="ball"></div>
+    </div> 
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
