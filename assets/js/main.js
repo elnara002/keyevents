@@ -2,51 +2,66 @@ const box = document.getElementById("box");
 const ball = document.getElementById("ball");
 const boxSizeInput = document.getElementById("boxsize");
 const ballSizeInput = document.getElementById("ballsize");
-const stepInput = document.getElementById("step");
 const ballColorInput = document.getElementById("ballcolor");
 const boxColorInput = document.getElementById("boxcolor");
+const step = 20;
 
 function moveBall() {
   box.style.width = boxSizeInput.value + "px";
-box.style.backgroundColor = boxColorInput.value;
-ball.style.width = ballSizeInput.value + "px";
-ball.style.backgroundColor = ballColorInput.value;
+  box.style.backgroundColor = boxColorInput.value;
+  ball.style.width = ballSizeInput.value + "px";
+  ball.style.backgroundColor = ballColorInput.value;
 }
-    
-// Not asagidaki funksiyalarda sehvler var amma yazmaga calisdim
 
-// function moveLeft() {
-//   const stepLength = parseInt(stepInput.value);
-//   const currentLeft = parseInt(ball.style.left);
-//   const newLeft = currentLeft - stepLength;
-//   if (newLeft <= (box.style.width - ball.style.width)) {
-//     ball.style.left = stepInput.value + "px";
+function moveLeft() {
+  let marLeft = ball.style.marginLeft ? parseInt(ball.style.marginLeft) : 0;
+  if (marLeft - step >= 0) {
+    ball.style.marginLeft = marLeft - step + "px";
+  } else {
+    ball.style.marginLeft = "0px";
+  }
+}
+
+function moveRight() {
+  let marLeft = ball.style.marginLeft ? parseInt(ball.style.marginLeft) : 0
+  if (marLeft + step <= box.clientWidth - ball.clientWidth) {
+    ball.style.marginLeft = marLeft + step + "px";
+  }
+  else {
+    ball.style.marginLeft = box.clientWidth - ball.clientWidth + "px"
+  }
+}
+
+function moveUp() {
+  let marTop = ball.style.marginTop ? parseInt(ball.style.marginTop) : 0;
+  if (marTop - step >= 0) {
+    ball.style.marginTop = marTop - step + "px";
+  } else {
+    ball.style.marginTop = "0px";
+  }
+}
+
+function moveDown() {
+  let marTop = ball.style.marginTop ? parseInt(ball.style.marginTop) : 0;
+  if (marTop + step <= box.clientHeight - ball.clientHeight) {
+    ball.style.marginTop = marTop + step + "px";
+  } else {
+    ball.style.marginTop = box.clientHeight - ball.clientHeight + "px";
+  }
+}
+// Klaviaturanin duymeleri ile yonlendirmek
+
+// document.body.addEventListener("keyup", e => {
+//   if (e.key == "ArrowRight") {
+//     moveRight();
+//   } else if (e.key == "ArrowLeft") {
+//     moveLeft();
+//   } else if (e.key == "ArrowDown") {
+//     moveDown();
+//   } else if (e.key == "ArrowUp") {
+//     moveUp();
 //   }
-// }
-// function moveRight() {
-//   const stepLength = parseInt(stepInput.value);
-//   const currentRight = parseInt(ball.style.right);
-//   const newRight = currentRight + stepLength;
-//   if (newRight <= (box.style.width - ball.style.width)) {
-//     ball.style.right = stepInput.value + "px";
-//   }
-// }
-// function moveUp() {
-//   const stepLength = parseInt(stepInput.value);
-//   const currentTop = parseInt(ball.style.top);
-//   const newTop = currentTop - stepLength;
-//   if (newTop < 300) {
-//     ball.style.top = stepInput.value + "px";
-//   }
-// }
-// function moveDown() {
-//   const stepLength = parseInt(stepInput.value);
-//   const currentBottom = parseInt(ball.style.bottom);
-//   const newBottom = currentBottom + stepLength;
-//   if (newBottom <300) {
-//     ball.style.bottom = stepInput.value + "px";
-//   }
-// }
+// });
 
 
 

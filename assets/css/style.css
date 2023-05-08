@@ -1,24 +1,28 @@
-input , button{
-    width: 10%;
+input,
+button {
+    width: 100px;
     padding: 5px 5px;
     height: 30px;
     margin: 10px 8px;
     border-radius: 6px;
     border: 1px solid rgb(243, 11, 11);
 }
-#box{
-    position: relative;
-    width: 350px;
-    height: 350px;
+
+#box {
+    margin: 0 25px;
+    width: 700px;
+    height: 450px;
     border: 1px solid rgb(35, 176, 219);
 }
-#ball{
-    position: absolute;
-    top: 150px;
-    left: 150px;
+
+#ball {
+    margin: 200px auto;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     border: 1px solid red;
-    
+}
+
+.d-flex {
+    display: flex;
 }
